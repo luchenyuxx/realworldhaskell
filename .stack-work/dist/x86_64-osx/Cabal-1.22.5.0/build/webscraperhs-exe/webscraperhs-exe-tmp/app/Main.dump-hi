@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-08 14:47:49.815193 UTC
+2016-09-13 20:31:22.423082 UTC
 
 interface main@main:Main 7103
-  interface hash: e75bd2404f4be8c75fb59dad31f0fb4f
-  ABI hash: 19069d5bd16f06aa49091a739eb4f736
-  export-list hash: 47f938bb69f8317fa91e96837f0128a5
+  interface hash: 11ac74a655475f92a8abc17137c72fa1
+  ABI hash: 5ea120b54da043a979934e933c936cd9
+  export-list hash: c7b5758dc04bf9f69debc6833ecf97ce
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 5fee89988e5320a4a6092ab0a4b2eddf
   sig of: Nothing
@@ -16,20 +16,20 @@ exports:
 module dependencies:
 package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
                       integer-gmp-1.0.0.0
-                      webscraperhs-0.1.0.0@websc_HZcvIajtoNAHnLcsGry7W3
+                      webscraperhs-0.1.0.0@websc_BlcTnemthub4yXcgkhZqU2
 orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
 family instance modules: base-4.8.2.0:Control.Applicative
                          base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
                          base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-import  -/  webscraperhs-0.1.0.0@websc_HZcvIajtoNAHnLcsGry7W3:Lib f74ed0b09e096c9def2124e867dd4c61
-74f02c3bdfe7b2d2c3a47d19c11e5cde
+import  -/  webscraperhs-0.1.0.0@websc_BlcTnemthub4yXcgkhZqU2:Lib 426eab7be5c00723ced79c79dcd27630
+caf10ab2849a78db22ee39570f98c6a0
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Lib.someFunc1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-b0994dc8bec6d8b8473f84ceb8135de0
+193ec6bed248ce06d7bb01e5837faf12
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

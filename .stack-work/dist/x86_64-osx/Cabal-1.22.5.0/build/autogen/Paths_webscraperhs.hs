@@ -17,7 +17,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/chenyu/git/webscraperhs/.stack-work/install/x86_64-osx/lts-6.16/7.10.3/bin"
-libdir     = "/Users/chenyu/git/webscraperhs/.stack-work/install/x86_64-osx/lts-6.16/7.10.3/lib/x86_64-osx-ghc-7.10.3/webscraperhs-0.1.0.0-HZcvIajtoNAHnLcsGry7W3"
+libdir     = "/Users/chenyu/git/webscraperhs/.stack-work/install/x86_64-osx/lts-6.16/7.10.3/lib/x86_64-osx-ghc-7.10.3/webscraperhs-0.1.0.0-BlcTnemthub4yXcgkhZqU2"
 datadir    = "/Users/chenyu/git/webscraperhs/.stack-work/install/x86_64-osx/lts-6.16/7.10.3/share/x86_64-osx-ghc-7.10.3/webscraperhs-0.1.0.0"
 libexecdir = "/Users/chenyu/git/webscraperhs/.stack-work/install/x86_64-osx/lts-6.16/7.10.3/libexec"
 sysconfdir = "/Users/chenyu/git/webscraperhs/.stack-work/install/x86_64-osx/lts-6.16/7.10.3/etc"
