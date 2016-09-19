@@ -16,6 +16,26 @@ type Predicate = FilePath  -- path to directory entry
 
 type InfoP a = FilePath -> Permissions -> Maybe Integer -> UTCTime -> a
 
+liftP :: (a -> b -> c) -> InfoP a -> b -> InfoP c
+liftP q f k w x y z = f w x y z `q` k
+
+-- liftP' :: (a -> b -> c) -> InfoP a -> b -> InfoP c
+-- liftp' q f k w x y z = f w x y z `q` constP k w x y z
+
+liftP2 :: (a -> b -> c) -> InfoP a -> InfoP b -> InfoP c
+liftP2 q f g w x y z = f w x y z `q` g w x y z
+
+constP :: a -> InfoP a
+constP k _ _ _ _ = k
+
+andP, orP :: InfoP Bool -> InfoP Bool -> InfoP Bool
+andP = liftP2 (&&)
+orP = liftP2 (||)
+
+greaterP, lesserP :: (Ord a) => InfoP a -> a -> InfoP Bool
+greaterP = liftP (>)
+lesserP = liftP (<)
+
 pathP :: InfoP FilePath
 pathP path _ _ _ = path
 
@@ -26,12 +46,8 @@ sizeP _ _ Nothing _ = -1
 equalP :: (Eq a) => InfoP a -> a -> InfoP Bool
 equalP = liftP (==)
 
-liftP :: (a -> b -> c) -> InfoP a -> b -> InfoP c
-liftP q f k w x y z = f w x y z `q` k
-
-greaterP, lesserP :: (Ord a) => InfoP a -> a -> InfoP Bool
-greaterP = liftP (>)
-lesserP = liftP (<)
+liftPath :: (FilePath -> a) -> InfoP a
+liftPath f w _ _ _ = f w
 
 getFileSize :: FilePath -> IO (Maybe Integer)
 getFileSize path = handle ((\_ -> return Nothing)::IOException -> IO (Maybe Integer)) $
