@@ -1,10 +1,14 @@
 module FindFile.ControlledVisit where
 
-data Info = Info {
+import System.Directory (Permissions(..), getDirectoryContents, searchable)
+import Data.Time.Clock (UTCTime(..))
+import System.FilePath
+
+Data Info = Info {
   infoPath :: FilePath
   , infoPerms :: Maybe Permissions
   , infoSize :: Maybe Integer
-  , infoModTime :: Maybe ClockTime
+  , infoModTime :: Maybe UTCTime
   } deriving (Eq, Ord, Show)
 
 traverse :: ([Info] -> [Info]) -> FilePath -> IO [Info]

@@ -49,6 +49,15 @@ equalP = liftP (==)
 liftPath :: (FilePath -> a) -> InfoP a
 liftPath f w _ _ _ = f w
 
+(==?) :: Eq a => InfoP a -> a -> InfoP Bool
+(==?) = equalP
+
+(&&?) ::InfoP Bool -> InfoP Bool -> InfoP Bool
+(&&?) = andP
+
+(>?) :: Ord a => InfoP a -> a -> InfoP Bool
+(>?) = greaterP
+
 getFileSize :: FilePath -> IO (Maybe Integer)
 getFileSize path = handle ((\_ -> return Nothing)::IOException -> IO (Maybe Integer)) $
   bracket (openFile path ReadMode) hClose $ \h -> do
